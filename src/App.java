@@ -31,7 +31,7 @@ class Personaje {
     public void defender() {
         this.defendiendo = true;
         this.vida_hp += 10; // Recupera 10 puntos de vida al defenderse
-        System.out.println(this.nombre + " se está defendiendo y recupera 10 puntos de vida.");
+        System.out.println(this.nombre + " se está defendiendo.");
     }
 
     // Método para mostrar estadísticas actuales
