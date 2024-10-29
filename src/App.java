@@ -39,9 +39,9 @@ class Personaje {
         System.out.println(this.nombre + " | Vida: " + this.vida_hp + " | Fuerza: " + this.fuerza + " | Velocidad: " + this.velocidad);
     }
 
-    // Método para reducir cooldowns (se sobrescribe en subclases si es necesario)
+    // Método para reducir cooldowns 
     public void reducirCooldown() {
-        // Sin implementación en la clase base
+      
     }
 }
 
@@ -59,7 +59,7 @@ class SuperHero extends Personaje {
         if (cooldownLlamarada == 0) {
             int damage = 45;
             if (oponente.defendiendo) {
-                damage -= 10; // Resta 10 puntos de daño si el oponente se está defendiendo
+                damage -= 10; 
                 if (damage < 0) damage = 0;
             }
             oponente.vida_hp -= damage;
@@ -104,7 +104,7 @@ class Villano extends Personaje {
         if (cooldownMakankosapo == 0) {
             int damage = 55;
             if (oponente.defendiendo) {
-                damage -= 10; // Resta 10 puntos de daño si el oponente se está defendiendo
+                damage -= 10; 
                 if (damage < 0) damage = 0;
             }
             oponente.vida_hp -= damage;
@@ -161,7 +161,7 @@ public class App {
             int eleccionVillano = sc.nextInt();
             accionVillano = seleccionarAccion(eleccionVillano, villano);
 
-            // Ejecutar acciones basadas en la velocidad
+            //el mas rapido ataca primero
             if (heroe.velocidad > villano.velocidad) {
                 ejecutarAccion(accionHeroe, heroe, villano);
                 if (villano.vida_hp > 0) ejecutarAccion(accionVillano, villano, heroe);
@@ -174,7 +174,7 @@ public class App {
             heroe.reducirCooldown();
             villano.reducirCooldown();
 
-            // Reiniciar defensa después de ejecutar acciones
+
             heroe.defendiendo = false;
             villano.defendiendo = false;
         }
@@ -202,7 +202,7 @@ public class App {
                 }
             case 3:
                 personaje.defender();
-                System.out.println(personaje.nombre + " se está defendiendo."); // Añadido
+                System.out.println(personaje.nombre + " se está defendiendo.");
                 return "defender";
             case 4:
                 if (personaje instanceof SuperHero) {
@@ -229,7 +229,7 @@ public class App {
                 ((Villano) atacante).makankosapo(oponente);
                 break;
             case "defender":
-                // Ya se maneja en seleccionarAccion
+
                 break;
             case "transformarse":
                 ((SuperHero) atacante).transformarse();
