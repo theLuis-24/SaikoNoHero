@@ -16,7 +16,7 @@ class Personaje {
         this.defendiendo = false;
     }
 
-    // Método para atacar a un oponente
+    //atacar a un oponente
     public void atacar(Personaje oponente) {
         int damage = this.fuerza;
         if (oponente.defendiendo) {
@@ -27,14 +27,14 @@ class Personaje {
         System.out.println(this.nombre + " ataca a " + oponente.nombre + " causando " + damage + " puntos de daño.");
     }
 
-    // Método para defenderse
+    //defenderse
     public void defender() {
         this.defendiendo = true;
-        this.vida_hp += 10; // Recupera 10 puntos de vida al defenderse
+        this.vida_hp += 10; 
         System.out.println(this.nombre + " se está defendiendo.");
     }
 
-    // Método para mostrar estadísticas actuales
+    //estadísticas actuales
     public void mostrarEstadisticas() {
         System.out.println(this.nombre + " | Vida: " + this.vida_hp + " | Fuerza: " + this.fuerza + " | Velocidad: " + this.velocidad);
     }
